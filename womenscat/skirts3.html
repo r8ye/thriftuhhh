@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+  <link rel="stylesheet" href="women.css"> <!-- ex: tees1.css  -->
+</head>
+
+<body>
+  <section>
+    <div class="container flex">
+      <div class="left">
+          <img src="skirts3.jpg"> <!--palitan mo pic, nasa gdrive lahat-->
+       
+      </div>
+      <div class="right">
+        <h3>Strap Stud Lace Mini Skirt <!--palitan nio name, nasa video lahat ng info ng products--> </h3>
+        <h4> <small>₱ </small>399.99  </h4> <!--palitan niyo price-->
+        <p>Stylish apparel for all occasions, designed with comfort and elegance in mind. Perfectly tailored to enhance your unique sense of style. </p>
+        <!--short description ng product-->
+        <h5>Color:</h5>
+        <div class="color flex1">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+       
+        <p>Size: <select name="size">
+
+          <option value="select size">Select Size</option>
+          <option value="small">S</option>
+          <option value="medium">M</option>
+          <option value="large">L</option>
+          <option value="xlarge">XL</option>
+        </select></p>
+
+        <div class="quantity">
+          <p>Quantity:</p>
+           <input type="number" min="1" value="1">
+        </div>
+
+        <button id="buyButton">Buy Now</button>
+
+    <div id="popup" class="popup">
+        <div class="popup-content">
+            <span class="close" onclick="closePopup()">&times;</span>
+            <p><br>Order Successfully Placed!</p>
+        </div>
+    </div>
+
+    <script>
+        function showPopup() {
+            var popup = document.getElementById("popup");
+            popup.style.display = "block";
+        }
+
+        function closePopup() {
+            var popup = document.getElementById("popup");
+            popup.style.display = "none";
+        }
+
+        document.getElementById("buyButton").addEventListener("click", function() {
+            showPopup();
+        });
+    </script>
+
+      </div>
+    </div>
+  </section>
+  <script>
+    function img(anything) {
+      document.querySelector('.slide').src = anything;
+    }
+
+    function change(change) {
+      const line = document.querySelector('.home');
+      line.style.background = change;
+    }
+  </script>
+</body>
+
+</html>

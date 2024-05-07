@@ -1,0 +1,1840 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&display=swap');
+
+:root{
+    --main-color:#000000;
+    --black:linear-gradient(to bottom right, #d0ccc2e3, rgb(210, 200, 194, 1.5));
+}
+
+*{
+    font-family: 'Calligraffitti', 'sans-serif';
+    margin:0; padding:0;
+    box-sizing: border-box;
+    outline: none; border:none;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: all .2s linear;
+    transition: width none;
+}
+
+html{
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    scroll-padding-top: 7rem;
+}
+
+html::-webkit-scrollbar{
+    width: 1rem;
+}
+
+html::-webkit-scrollbar-track{
+    background: var(--black);
+}
+
+html::-webkit-scrollbar-thumb{
+    background: var(--main-color);
+}
+
+body{
+    overflow-x: hidden;
+    background: var(--black);
+    
+}
+
+section{
+    padding:2rem 9%;
+}
+
+.heading{
+    font-size: 4rem;
+    text-align: center;
+    padding-bottom: 2rem;
+    color:#000000;
+}
+
+.heading span{
+    color:var(--main-color);
+}
+
+.btn{
+    margin-top: 1rem;
+    display: inline-block;
+    padding:.8rem 3rem;
+    font-size: 1.7rem;
+    background:#ffffff;
+    font-weight: 500;
+    color:var(--black);
+    cursor: pointer;
+    border: 1.5px solid rgb(199, 198, 198); 
+}
+
+.btn:hover{
+    background: var(--main-color);
+    color:#fff;
+    letter-spacing: .1rem;
+}
+
+.header{
+    position: fixed;
+    top:0; left:0; right:0;
+    z-index: 1000;
+    background: transparent(0, 0, 0);
+    padding:3rem 9%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header .logo{
+    font-size: 2.5rem;
+    color:#343330;
+    font-weight: bolder;
+}
+
+.header .logo i{
+    padding-right: .5rem;
+    color:rgba(0, 0, 0, 0.74);
+    animation: floating 3s linear infinite;
+}
+
+@keyframes floating{
+    0%, 100%{
+        transform: translateY(0rem);
+    }
+    50%{
+        transform: translateY(-1rem);
+    }
+}
+
+.header .navbar a{
+    font-size: 1.7rem;
+    color:#000000;
+    margin:0 1rem;
+}
+
+.header .navbar a.active,
+.header .navbar a:hover{
+    color:white;
+}
+
+.header .icons a,
+.header .icons div{
+    font-size: 2.5rem;
+    color:#070707b0;
+    margin-left: 2rem;
+    cursor: pointer;
+}
+
+.header .icons a:hover,
+.header .icons div:hover{
+    color:var(--main-color);
+}
+
+#menu-btn{
+    display: none;
+}
+
+.header .search-form{
+    position: absolute;
+    top:115%; right:-105%;
+    background: #fffefe;
+    width:50rem;
+    height:5rem;
+    display: flex;
+    align-items: center;
+    opacity: 0;
+}
+
+.header .search-form.active{
+    right:2rem;
+    opacity: 1;
+    transition: .4s linear;
+}
+
+.header .search-form input{
+    width:100%;
+    padding:0 1.5rem;
+    font-size: 1.6rem;
+    color:var(--black);
+    text-transform: none;
+}
+
+.header .search-form label{
+    font-size: 2.5rem;
+    padding-right: 1.5rem;
+    color: var(--black);
+    cursor: pointer;
+}
+
+.header .search-form label:hover{
+    color:var(--main-color);
+}
+
+.header.active{
+    padding:2rem 9%;
+    background: linear-gradient(to bottom right, #d0ccc2, rgb(210, 200, 194, 1.5));
+    border-bottom: 2px solid black;
+    width: 100%; /* Adjust the width of the line */
+    margin: 0 auto; /* Center the line horizontally */
+}
+
+/* WOMEN */
+
+/* TEES START */
+
+.tees .box-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    gap:1.5rem;
+}
+
+.tees .box-container .box{
+    position: relative;
+    text-align: right;
+    overflow: hidden;
+}
+
+.tees .box-container .box {
+    position: relative; /* Set the container to relative position */
+}
+
+.tees .box-container .box .image {
+    height: 60rem;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 30px;
+}
+
+.tees .box-container .box .content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 2rem;
+    background: #ffffffe7;
+    border-bottom-left-radius: 30px; /* Match the border radius of the image */
+    border-bottom-right-radius: 30px; /* Match the border radius of the image */
+}
+
+
+.tees .box-container .box .image img{
+    height:100%;
+    width:100%;
+    object-fit: cover;
+}
+.tees .box-container .box:hover .image img{
+    transform: scale(1.2);
+}
+.tees .box-container .box .icons{
+    position: absolute;
+    top: 0; right: -6rem;
+    z-index: 1;
+}
+.tees .box-container .box:hover .icons{
+    right: 1rem;
+}
+
+.tees .box-container .box .icons a{
+    height: 4.5rem;
+    width: 4.5rem;
+    line-height: 4.5rem;
+    border-radius: 50%;
+    font-size: 2rem;
+    color:var(--black);
+    background: #fff;
+    margin-top: 1rem;
+    display: block;
+}
+.tees .box-container .box .icons a:hover{
+    background: var(--main-color);
+    color:#fff;
+}
+
+
+.tees .box-container .box .content h3 {
+    font-size: 2.5rem;
+    font-weight: normal;
+    color: #000000;
+    text-align: center; /* Center-align the text */
+}
+
+.tees .box-container .box .content .price {
+    font-size: 2rem;
+    font-weight: bolder;
+    color: #811919;
+    text-align: center; /* Center-align the text */
+}
+.tees .box-container .box .content .price span {
+    font-size: 1.5rem;
+    font-weight: normal;
+    color: rgba(77, 75, 75, 0.664);
+    text-decoration: line-through;
+    text-align: center; /* Center-align the text */
+}
+
+/* TEES END */
+
+
+/* CROP TOPS START */
+
+.croptops .box-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    gap:1.5rem;
+}
+
+.croptops .box-container .box{
+    position: relative;
+    text-align: right;
+    overflow: hidden;
+}
+
+.croptops .box-container .box {
+    position: relative; /* Set the container to relative position */
+}
+
+.croptops .box-container .box .image {
+    height: 60rem;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 30px;
+}
+
+.croptops .box-container .box .content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 2rem;
+    background: #ffffffe7;
+    border-bottom-left-radius: 30px; /* Match the border radius of the image */
+    border-bottom-right-radius: 30px; /* Match the border radius of the image */
+}
+
+
+.croptops .box-container .box .image img{
+    height:100%;
+    width:100%;
+    object-fit: cover;
+}
+.croptops .box-container .box:hover .image img{
+    transform: scale(1.2);
+}
+
+.croptops .box-container .box .icons{
+    position: absolute;
+    top: 0; right: -6rem;
+    z-index: 1;
+}
+
+.croptops .box-container .box:hover .icons{
+    right: 1rem;
+}
+
+.croptops .box-container .box .icons a{
+    height: 4.5rem;
+    width: 4.5rem;
+    line-height: 4.5rem;
+    border-radius: 50%;
+    font-size: 2rem;
+    color:var(--black);
+    background: #fff;
+    margin-top: 1rem;
+    display: block;
+}
+.croptops .box-container .box .icons a:hover{
+    background: var(--main-color);
+    color:#fff;
+}
+
+
+.croptops .box-container .box .content h3 {
+    font-size: 2.5rem;
+    font-weight: normal;
+    color: #000000;
+    text-align: center; /* Center-align the text */
+}
+
+.croptops .box-container .box .content .price {
+    font-size: 2rem;
+    font-weight: bolder;
+    color: #811919;
+    text-align: center; /* Center-align the text */
+}
+.croptops .box-container .box .content .price span {
+    font-size: 1.5rem;
+    font-weight: normal;
+    color: rgba(77, 75, 75, 0.664);
+    text-decoration: line-through;
+    text-align: center; /* Center-align the text */
+}
+
+/* CROP TOPS END */
+
+
+/*TANK TOP STARTS HERE*/
+
+.tanktop .box-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    gap:1.5rem;
+}
+
+.tanktop .box-container .box{
+    position: relative;
+    text-align: right;
+    overflow: hidden;
+}
+
+.tanktop .box-container .box {
+    position: relative; /* Set the container to relative position */
+}
+
+.tanktop .box-container .box .image {
+    height: 60rem;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 30px;
+}
+
+.tanktop .box-container .box .content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 2rem;
+    background: #ffffffe7;
+    border-bottom-left-radius: 30px; /* Match the border radius of the image */
+    border-bottom-right-radius: 30px; /* Match the border radius of the image */
+}
+
+
+.tanktop .box-container .box .image img{
+    height:100%;
+    width:100%;
+    object-fit: cover;
+}
+.tanktop .box-container .box:hover .image img{
+    transform: scale(1.2);
+}
+.tanktop .box-container .box .icons{
+    position: absolute;
+    top: 0; right: -6rem;
+    z-index: 1;
+}
+.tanktop .box-container .box:hover .icons{
+    right: 1rem;
+}
+
+.tanktop .box-container .box .icons a{
+    height: 4.5rem;
+    width: 4.5rem;
+    line-height: 4.5rem;
+    border-radius: 50%;
+    font-size: 2rem;
+    color:var(--black);
+    background: #fff;
+    margin-top: 1rem;
+    display: block;
+}
+.tanktop .box-container .box .icons a:hover{
+    background: var(--main-color);
+    color:#fff;
+}
+
+
+.tanktop .box-container .box .content h3 {
+    font-size: 2.5rem;
+    font-weight: normal;
+    color: #000000;
+    text-align: center; /* Center-align the text */
+}
+
+.tanktop .box-container .box .content .price {
+    font-size: 2rem;
+    font-weight: bolder;
+    color: #811919;
+    text-align: center; /* Center-align the text */
+}
+.tanktop .box-container .box .content .price span {
+    font-size: 1.5rem;
+    font-weight: normal;
+    color: rgba(77, 75, 75, 0.664);
+    text-decoration: line-through;
+    text-align: center; /* Center-align the text */
+}
+
+.tanktop .box-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    gap:1.5rem;
+}
+
+.tanktop .box-container .box{
+    position: relative;
+    text-align: right;
+    overflow: hidden;
+}
+
+.tanktop .box-container .box {
+    position: relative; /* Set the container to relative position */
+}
+
+.tanktop .box-container .box .image {
+    height: 60rem;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 30px;
+}
+
+.tanktop .box-container .box .content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 2rem;
+    background: #ffffffe7;
+    border-bottom-left-radius: 30px; /* Match the border radius of the image */
+    border-bottom-right-radius: 30px; /* Match the border radius of the image */
+}
+
+
+.tanktop .box-container .box .image img{
+    height:100%;
+    width:100%;
+    object-fit: cover;
+}
+.tanktop .box-container .box:hover .image img{
+    transform: scale(1.2);
+}
+.tanktop .box-container .box .icons{
+    position: absolute;
+    top: 0; right: -6rem;
+    z-index: 1;
+}
+.tanktop .box-container .box:hover .icons{
+    right: 1rem;
+}
+
+.tanktop .box-container .box .icons a{
+    height: 4.5rem;
+    width: 4.5rem;
+    line-height: 4.5rem;
+    border-radius: 50%;
+    font-size: 2rem;
+    color:var(--black);
+    background: #fff;
+    margin-top: 1rem;
+    display: block;
+}
+.tanktop .box-container .box .icons a:hover{
+    background: var(--main-color);
+    color:#fff;
+}
+
+
+.tanktop .box-container .box .content h3 {
+    font-size: 2.5rem;
+    font-weight: normal;
+    color: #000000;
+    text-align: center; /* Center-align the text */
+}
+
+.tanktop .box-container .box .content .price {
+    font-size: 2rem;
+    font-weight: bolder;
+    color: #811919;
+    text-align: center; /* Center-align the text */
+}
+.tanktop .box-container .box .content .price span {
+    font-size: 1.5rem;
+    font-weight: normal;
+    color: rgba(77, 75, 75, 0.664);
+    text-decoration: line-through;
+    text-align: center; /* Center-align the text */
+}
+
+/*TANK TOP ENDS*/
+
+
+/*PANTS STARTS HERE*/
+
+.pants .box-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    gap:1.5rem;
+}
+
+.pants .box-container .box{
+    position: relative;
+    text-align: right;
+    overflow: hidden;
+}
+
+.pants .box-container .box {
+    position: relative; /* Set the container to relative position */
+}
+
+.pants .box-container .box .image {
+    height: 60rem;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 30px;
+}
+
+.pants .box-container .box .content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 2rem;
+    background: #ffffffe7;
+    border-bottom-left-radius: 30px; /* Match the border radius of the image */
+    border-bottom-right-radius: 30px; /* Match the border radius of the image */
+}
+
+
+.pants .box-container .box .image img{
+    height:100%;
+    width:100%;
+    object-fit: cover;
+}
+.pants .box-container .box:hover .image img{
+    transform: scale(1.2);
+}
+.pants .box-container .box .icons{
+    position: absolute;
+    top: 0; right: -6rem;
+    z-index: 1;
+}
+.pants .box-container .box:hover .icons{
+    right: 1rem;
+}
+
+.pants .box-container .box .icons a{
+    height: 4.5rem;
+    width: 4.5rem;
+    line-height: 4.5rem;
+    border-radius: 50%;
+    font-size: 2rem;
+    color:var(--black);
+    background: #fff;
+    margin-top: 1rem;
+    display: block;
+}
+.pants .box-container .box .icons a:hover{
+    background: var(--main-color);
+    color:#fff;
+}
+
+
+.pants .box-container .box .content h3 {
+    font-size: 2.5rem;
+    font-weight: normal;
+    color: #000000;
+    text-align: center; /* Center-align the text */
+}
+
+.pants .box-container .box .content .price {
+    font-size: 2rem;
+    font-weight: bolder;
+    color: #811919;
+    text-align: center; /* Center-align the text */
+}
+.pants .box-container .box .content .price span {
+    font-size: 1.5rem;
+    font-weight: normal;
+    color: rgba(77, 75, 75, 0.664);
+    text-decoration: line-through;
+    text-align: center; /* Center-align the text */
+}
+
+/*PANTS END HERE*/
+
+/* SKIRTS START*/
+
+.skirts .box-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    gap:1.5rem;
+}
+
+.skirts .box-container .box{
+    position: relative;
+    text-align: right;
+    overflow: hidden;
+}
+
+.skirts .box-container .box {
+    position: relative; /* Set the container to relative position */
+}
+
+.skirts .box-container .box .image {
+    height: 60rem;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 30px;
+}
+
+.skirts .box-container .box .content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 2rem;
+    background: #ffffffe7;
+    border-bottom-left-radius: 30px; /* Match the border radius of the image */
+    border-bottom-right-radius: 30px; /* Match the border radius of the image */
+}
+
+
+.skirts .box-container .box .image img{
+    height:100%;
+    width:100%;
+    object-fit: cover;
+}
+.skirts .box-container .box:hover .image img{
+    transform: scale(1.2);
+}
+.skirts .box-container .box .icons{
+    position: absolute;
+    top: 0; right: -6rem;
+    z-index: 1;
+}
+.skirts .box-container .box:hover .icons{
+    right: 1rem;
+}
+
+.skirts .box-container .box .icons a{
+    height: 4.5rem;
+    width: 4.5rem;
+    line-height: 4.5rem;
+    border-radius: 50%;
+    font-size: 2rem;
+    color:var(--black);
+    background: #fff;
+    margin-top: 1rem;
+    display: block;
+}
+.skirts .box-container .box .icons a:hover{
+    background: var(--main-color);
+    color:#fff;
+}
+
+
+.skirts .box-container .box .content h3 {
+    font-size: 2.5rem;
+    font-weight: normal;
+    color: #000000;
+    text-align: center; /* Center-align the text */
+}
+
+.skirts .box-container .box .content .price {
+    font-size: 2rem;
+    font-weight: bolder;
+    color: #811919;
+    text-align: center; /* Center-align the text */
+}
+.skirts .box-container .box .content .price span {
+    font-size: 1.5rem;
+    font-weight: normal;
+    color: rgba(77, 75, 75, 0.664);
+    text-decoration: line-through;
+    text-align: center; /* Center-align the text */
+}
+
+.skirts .box-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    gap:1.5rem;
+}
+
+.skirts .box-container .box{
+    position: relative;
+    text-align: right;
+    overflow: hidden;
+}
+
+.skirts .box-container .box {
+    position: relative; /* Set the container to relative position */
+}
+
+.skirts .box-container .box .image {
+    height: 60rem;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 30px;
+}
+
+.skirts .box-container .box .content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 2rem;
+    background: #ffffffe7;
+    border-bottom-left-radius: 30px; /* Match the border radius of the image */
+    border-bottom-right-radius: 30px; /* Match the border radius of the image */
+}
+
+
+.skirts .box-container .box .image img{
+    height:100%;
+    width:100%;
+    object-fit: cover;
+}
+.skirts .box-container .box:hover .image img{
+    transform: scale(1.2);
+}
+.skirts .box-container .box .icons{
+    position: absolute;
+    top: 0; right: -6rem;
+    z-index: 1;
+}
+.skirts .box-container .box:hover .icons{
+    right: 1rem;
+}
+
+.skirts .box-container .box .icons a{
+    height: 4.5rem;
+    width: 4.5rem;
+    line-height: 4.5rem;
+    border-radius: 50%;
+    font-size: 2rem;
+    color:var(--black);
+    background: #fff;
+    margin-top: 1rem;
+    display: block;
+}
+.skirts .box-container .box .icons a:hover{
+    background: var(--main-color);
+    color:#fff;
+}
+
+
+.skirts .box-container .box .content h3 {
+    font-size: 2.5rem;
+    font-weight: normal;
+    color: #000000;
+    text-align: center; /* Center-align the text */
+}
+
+.skirts .box-container .box .content .price {
+    font-size: 2rem;
+    font-weight: bolder;
+    color: #811919;
+    text-align: center; /* Center-align the text */
+}
+.skirts .box-container .box .content .price span {
+    font-size: 1.5rem;
+    font-weight: normal;
+    color: rgba(77, 75, 75, 0.664);
+    text-decoration: line-through;
+    text-align: center; /* Center-align the text */
+}
+
+/*SKIRTS END HERE*/
+
+
+/* WOMEN */
+
+/*T-SHIRTS STARTS HERE*/
+.tshirt .box-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    gap:1.5rem;
+}
+
+.tshirt .box-container .box{
+    position: relative;
+    text-align: right;
+    overflow: hidden;
+}
+
+.tshirt .box-container .box {
+    position: relative; /* Set the container to relative position */
+}
+
+.tshirt .box-container .box .image {
+    height: 60rem;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 30px;
+}
+
+.tshirt .box-container .box .content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 2rem;
+    background: #ffffffe7;
+    border-bottom-left-radius: 30px; /* Match the border radius of the image */
+    border-bottom-right-radius: 30px; /* Match the border radius of the image */
+}
+
+
+.tshirt .box-container .box .image img{
+    height:100%;
+    width:100%;
+    object-fit: cover;
+}
+.tshirt .box-container .box:hover .image img{
+    transform: scale(1.2);
+}
+.s
+tshirt.box-container .box .icons{
+    position: absolute;
+    top: 0; right: -6rem;
+    z-index: 1;
+}
+.tshirt .box-container .box:hover .icons{
+    right: 1rem;
+}
+
+.tshirt .box-container .box .icons a{
+    height: 4.5rem;
+    width: 4.5rem;
+    line-height: 4.5rem;
+    border-radius: 50%;
+    font-size: 2rem;
+    color:var(--black);
+    background: #fff;
+    margin-top: 1rem;
+    display: block;
+}
+.tshirt .box-container .box .icons a:hover{
+    background: var(--main-color);
+    color:#fff;
+}
+
+
+.tshirt .box-container .box .content h3 {
+    font-size: 2.5rem;
+    font-weight: normal;
+    color: #000000;
+    text-align: center; /* Center-align the text */
+}
+
+.tshirt .box-container .box .content .price {
+    font-size: 2rem;
+    font-weight: bolder;
+    color: #811919;
+    text-align: center; /* Center-align the text */
+}
+.tshirt .box-container .box .content .price span {
+    font-size: 1.5rem;
+    font-weight: normal;
+    color: rgba(77, 75, 75, 0.664);
+    text-decoration: line-through;
+    text-align: center; /* Center-align the text */
+}
+
+.tshirt .box-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    gap:1.5rem;
+}
+
+.tshirt .box-container .box{
+    position: relative;
+    text-align: right;
+    overflow: hidden;
+}
+
+.tshirt .box-container .box {
+    position: relative; /* Set the container to relative position */
+}
+
+.tshirt .box-container .box .image {
+    height: 60rem;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 30px;
+}
+
+.tshirt .box-container .box .content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 2rem;
+    background: #ffffffe7;
+    border-bottom-left-radius: 30px; /* Match the border radius of the image */
+    border-bottom-right-radius: 30px; /* Match the border radius of the image */
+}
+
+
+.tshirt .box-container .box .image img{
+    height:100%;
+    width:100%;
+    object-fit: cover;
+}
+.tshirt .box-container .box:hover .image img{
+    transform: scale(1.2);
+}
+.tshirt .box-container .box .icons{
+    position: absolute;
+    top: 0; right: -6rem;
+    z-index: 1;
+}
+.tshirt .box-container .box:hover .icons{
+    right: 1rem;
+}
+
+.tshirt .box-container .box .icons a{
+    height: 4.5rem;
+    width: 4.5rem;
+    line-height: 4.5rem;
+    border-radius: 50%;
+    font-size: 2rem;
+    color:var(--black);
+    background: #fff;
+    margin-top: 1rem;
+    display: block;
+}
+.tshirt .box-container .box .icons a:hover{
+    background: var(--main-color);
+    color:#fff;
+}
+
+
+.tshirt .box-container .box .content h3 {
+    font-size: 2.5rem;
+    font-weight: normal;
+    color: #000000;
+    text-align: center; /* Center-align the text */
+}
+
+.tshirt .box-container .box .content .price {
+    font-size: 2rem;
+    font-weight: bolder;
+    color: #811919;
+    text-align: center; /* Center-align the text */
+}
+.tshirt .box-container .box .content .price span {
+    font-size: 1.5rem;
+    font-weight: normal;
+    color: rgba(77, 75, 75, 0.664);
+    text-decoration: line-through;
+    text-align: center; /* Center-align the text */
+}
+
+/*T-SHIRT ENDS HERE*/
+
+/*VESTS STARTS HERE*/
+
+.vest .box-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    gap:1.5rem;
+}
+
+.vest .box-container .box{
+    position: relative;
+    text-align: right;
+    overflow: hidden;
+}
+
+.vest .box-container .box {
+    position: relative; /* Set the container to relative position */
+}
+
+.vest .box-container .box .image {
+    height: 60rem;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 30px;
+}
+
+.vest .box-container .box .content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 2rem;
+    background: #ffffffe7;
+    border-bottom-left-radius: 30px; /* Match the border radius of the image */
+    border-bottom-right-radius: 30px; /* Match the border radius of the image */
+}
+
+
+.vest .box-container .box .image img{
+    height:100%;
+    width:100%;
+    object-fit: cover;
+}
+.vest .box-container .box:hover .image img{
+    transform: scale(1.2);
+}
+.vest .box-container .box .icons{
+    position: absolute;
+    top: 0; right: -6rem;
+    z-index: 1;
+}
+.vest .box-container .box:hover .icons{
+    right: 1rem;
+}
+
+.vest .box-container .box .icons a{
+    height: 4.5rem;
+    width: 4.5rem;
+    line-height: 4.5rem;
+    border-radius: 50%;
+    font-size: 2rem;
+    color:var(--black);
+    background: #fff;
+    margin-top: 1rem;
+    display: block;
+}
+.vest .box-container .box .icons a:hover{
+    background: var(--main-color);
+    color:#fff;
+}
+
+
+.vest .box-container .box .content h3 {
+    font-size: 2.5rem;
+    font-weight: normal;
+    color: #000000;
+    text-align: center; /* Center-align the text */
+}
+
+.skirts .box-container .box .content .price {
+    font-size: 2rem;
+    font-weight: bolder;
+    color: #811919;
+    text-align: center; /* Center-align the text */
+}
+.vest .box-container .box .content .price span {
+    font-size: 1.5rem;
+    font-weight: normal;
+    color: rgba(77, 75, 75, 0.664);
+    text-decoration: line-through;
+    text-align: center; /* Center-align the text */
+}
+
+.vest .box-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    gap:1.5rem;
+}
+
+.vest .box-container .box{
+    position: relative;
+    text-align: right;
+    overflow: hidden;
+}
+
+.vest .box-container .box {
+    position: relative; /* Set the container to relative position */
+}
+
+.vest .box-container .box .image {
+    height: 60rem;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 30px;
+}
+
+.vest .box-container .box .content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 2rem;
+    background: #ffffffe7;
+    border-bottom-left-radius: 30px; /* Match the border radius of the image */
+    border-bottom-right-radius: 30px; /* Match the border radius of the image */
+}
+
+
+.vest .box-container .box .image img{
+    height:100%;
+    width:100%;
+    object-fit: cover;
+}
+.vest .box-container .box:hover .image img{
+    transform: scale(1.2);
+}
+.vest .box-container .box .icons{
+    position: absolute;
+    top: 0; right: -6rem;
+    z-index: 1;
+}
+.vest .box-container .box:hover .icons{
+    right: 1rem;
+}
+
+.vest .box-container .box .icons a{
+    height: 4.5rem;
+    width: 4.5rem;
+    line-height: 4.5rem;
+    border-radius: 50%;
+    font-size: 2rem;
+    color:var(--black);
+    background: #fff;
+    margin-top: 1rem;
+    display: block;
+}
+.vest .box-container .box .icons a:hover{
+    background: var(--main-color);
+    color:#fff;
+}
+
+
+.vest .box-container .box .content h3 {
+    font-size: 2.5rem;
+    font-weight: normal;
+    color: #000000;
+    text-align: center; /* Center-align the text */
+}
+
+.vest .box-container .box .content .price {
+    font-size: 2rem;
+    font-weight: bolder;
+    color: #811919;
+    text-align: center; /* Center-align the text */
+}
+.vest .box-container .box .content .price span {
+    font-size: 1.5rem;
+    font-weight: normal;
+    color: rgba(77, 75, 75, 0.664);
+    text-decoration: line-through;
+    text-align: center; /* Center-align the text */
+}
+
+/*VEST ENDS HERE*/
+
+
+/*GRAPHIC STARTS HERE*/
+.graphic .box-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    gap:1.5rem;
+}
+
+.graphic .box-container .box{
+    position: relative;
+    text-align: right;
+    overflow: hidden;
+}
+
+.graphic .box-container .box {
+    position: relative; /* Set the container to relative position */
+}
+
+.graphic .box-container .box .image {
+    height: 60rem;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 30px;
+}
+
+.graphic .box-container .box .content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 2rem;
+    background: #ffffffe7;
+    border-bottom-left-radius: 30px; /* Match the border radius of the image */
+    border-bottom-right-radius: 30px; /* Match the border radius of the image */
+}
+
+
+.graphic .box-container .box .image img{
+    height:100%;
+    width:100%;
+    object-fit: cover;
+}
+.graphic .box-container .box:hover .image img{
+    transform: scale(1.2);
+}
+.graphic .box-container .box .icons{
+    position: absolute;
+    top: 0; right: -6rem;
+    z-index: 1;
+}
+.graphic .box-container .box:hover .icons{
+    right: 1rem;
+}
+
+.graphic .box-container .box .icons a{
+    height: 4.5rem;
+    width: 4.5rem;
+    line-height: 4.5rem;
+    border-radius: 50%;
+    font-size: 2rem;
+    color:var(--black);
+    background: #fff;
+    margin-top: 1rem;
+    display: block;
+}
+.graphic .box-container .box .icons a:hover{
+    background: var(--main-color);
+    color:#fff;
+}
+
+
+.graphic .box-container .box .content h3 {
+    font-size: 2.5rem;
+    font-weight: normal;
+    color: #000000;
+    text-align: center; /* Center-align the text */
+}
+
+.graphic .box-container .box .content .price {
+    font-size: 2rem;
+    font-weight: bolder;
+    color: #811919;
+    text-align: center; /* Center-align the text */
+}
+.graphic .box-container .box .content .price span {
+    font-size: 1.5rem;
+    font-weight: normal;
+    color: rgba(77, 75, 75, 0.664);
+    text-decoration: line-through;
+    text-align: center; /* Center-align the text */
+}
+
+.graphic .box-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    gap:1.5rem;
+}
+
+.graphic .box-container .box{
+    position: relative;
+    text-align: right;
+    overflow: hidden;
+}
+
+.graphic .box-container .box {
+    position: relative; /* Set the container to relative position */
+}
+
+.graphic .box-container .box .image {
+    height: 60rem;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 30px;
+}
+
+.graphic .box-container .box .content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 2rem;
+    background: #ffffffe7;
+    border-bottom-left-radius: 30px; /* Match the border radius of the image */
+    border-bottom-right-radius: 30px; /* Match the border radius of the image */
+}
+
+
+.graphic .box-container .box .image img{
+    height:100%;
+    width:100%;
+    object-fit: cover;
+}
+.graphic .box-container .box:hover .image img{
+    transform: scale(1.2);
+}
+.graphic .box-container .box .icons{
+    position: absolute;
+    top: 0; right: -6rem;
+    z-index: 1;
+}
+.graphic .box-container .box:hover .icons{
+    right: 1rem;
+}
+
+.graphic .box-container .box .icons a{
+    height: 4.5rem;
+    width: 4.5rem;
+    line-height: 4.5rem;
+    border-radius: 50%;
+    font-size: 2rem;
+    color:var(--black);
+    background: #fff;
+    margin-top: 1rem;
+    display: block;
+}
+.graphic .box-container .box .icons a:hover{
+    background: var(--main-color);
+    color:#fff;
+}
+
+
+.graphic .box-container .box .content h3 {
+    font-size: 2.5rem;
+    font-weight: normal;
+    color: #000000;
+    text-align: center; /* Center-align the text */
+}
+
+.graphic .box-container .box .content .price {
+    font-size: 2rem;
+    font-weight: bolder;
+    color: #811919;
+    text-align: center; /* Center-align the text */
+}
+.graphic .box-container .box .content .price span {
+    font-size: 1.5rem;
+    font-weight: normal;
+    color: rgba(77, 75, 75, 0.664);
+    text-decoration: line-through;
+    text-align: center; /* Center-align the text */
+}
+
+/*GRAPHIC ENDS HERE*/
+
+
+/*SHORTS STARTS HERE*/
+.shorts .box-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    gap:1.5rem;
+}
+
+.shorts .box-container .box{
+    position: relative;
+    text-align: right;
+    overflow: hidden;
+}
+
+.shorts .box-container .box {
+    position: relative; /* Set the container to relative position */
+}
+
+.shorts .box-container .box .image {
+    height: 60rem;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 30px;
+}
+
+.shorts .box-container .box .content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 2rem;
+    background: #ffffffe7;
+    border-bottom-left-radius: 30px; /* Match the border radius of the image */
+    border-bottom-right-radius: 30px; /* Match the border radius of the image */
+}
+
+
+.shorts .box-container .box .image img{
+    height:100%;
+    width:100%;
+    object-fit: cover;
+}
+.shorts .box-container .box:hover .image img{
+    transform: scale(1.2);
+}
+.shorts .box-container .box .icons{
+    position: absolute;
+    top: 0; right: -6rem;
+    z-index: 1;
+}
+.shorts .box-container .box:hover .icons{
+    right: 1rem;
+}
+
+.shorts .box-container .box .icons a{
+    height: 4.5rem;
+    width: 4.5rem;
+    line-height: 4.5rem;
+    border-radius: 50%;
+    font-size: 2rem;
+    color:var(--black);
+    background: #fff;
+    margin-top: 1rem;
+    display: block;
+}
+.shorts .box-container .box .icons a:hover{
+    background: var(--main-color);
+    color:#fff;
+}
+
+
+.shorts .box-container .box .content h3 {
+    font-size: 2.5rem;
+    font-weight: normal;
+    color: #000000;
+    text-align: center; /* Center-align the text */
+}
+
+.shorts .box-container .box .content .price {
+    font-size: 2rem;
+    font-weight: bolder;
+    color: #811919;
+    text-align: center; /* Center-align the text */
+}
+.shorts .box-container .box .content .price span {
+    font-size: 1.5rem;
+    font-weight: normal;
+    color: rgba(77, 75, 75, 0.664);
+    text-decoration: line-through;
+    text-align: center; /* Center-align the text */
+}
+
+.shorts .box-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    gap:1.5rem;
+}
+
+.shorts .box-container .box{
+    position: relative;
+    text-align: right;
+    overflow: hidden;
+}
+
+.shorts .box-container .box {
+    position: relative; /* Set the container to relative position */
+}
+
+.shorts .box-container .box .image {
+    height: 60rem;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 30px;
+}
+
+.shorts .box-container .box .content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 2rem;
+    background: #ffffffe7;
+    border-bottom-left-radius: 30px; /* Match the border radius of the image */
+    border-bottom-right-radius: 30px; /* Match the border radius of the image */
+}
+
+
+.shorts .box-container .box .image img{
+    height:100%;
+    width:100%;
+    object-fit: cover;
+}
+.shorts .box-container .box:hover .image img{
+    transform: scale(1.2);
+}
+.shorts .box-container .box .icons{
+    position: absolute;
+    top: 0; right: -6rem;
+    z-index: 1;
+}
+.shorts .box-container .box:hover .icons{
+    right: 1rem;
+}
+
+.shorts .box-container .box .icons a{
+    height: 4.5rem;
+    width: 4.5rem;
+    line-height: 4.5rem;
+    border-radius: 50%;
+    font-size: 2rem;
+    color:var(--black);
+    background: #fff;
+    margin-top: 1rem;
+    display: block;
+}
+.shorts .box-container .box .icons a:hover{
+    background: var(--main-color);
+    color:#fff;
+}
+
+
+.shorts .box-container .box .content h3 {
+    font-size: 2.5rem;
+    font-weight: normal;
+    color: #000000;
+    text-align: center; /* Center-align the text */
+}
+
+.shorts .box-container .box .content .price {
+    font-size: 2rem;
+    font-weight: bolder;
+    color: #811919;
+    text-align: center; /* Center-align the text */
+}
+.shorts .box-container .box .content .price span {
+    font-size: 1.5rem;
+    font-weight: normal;
+    color: rgba(77, 75, 75, 0.664);
+    text-decoration: line-through;
+    text-align: center; /* Center-align the text */
+}
+
+/*SHORTS ENDS HERE*/
+
+
+/*MPANTS STARTS HERE*/
+.mpants .box-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    gap:1.5rem;
+}
+
+.mpants .box-container .box{
+    position: relative;
+    text-align: right;
+    overflow: hidden;
+}
+
+.mpants .box-container .box {
+    position: relative; /* Set the container to relative position */
+}
+
+.mpants .box-container .box .image {
+    height: 60rem;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 30px;
+}
+
+.mpants .box-container .box .content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 2rem;
+    background: #ffffffe7;
+    border-bottom-left-radius: 30px; /* Match the border radius of the image */
+    border-bottom-right-radius: 30px; /* Match the border radius of the image */
+}
+
+
+.mpants .box-container .box .image img{
+    height:100%;
+    width:100%;
+    object-fit: cover;
+}
+.mpants .box-container .box:hover .image img{
+    transform: scale(1.2);
+}
+.mpants .box-container .box .icons{
+    position: absolute;
+    top: 0; right: -6rem;
+    z-index: 1;
+}
+.mpants .box-container .box:hover .icons{
+    right: 1rem;
+}
+
+.mpants .box-container .box .icons a{
+    height: 4.5rem;
+    width: 4.5rem;
+    line-height: 4.5rem;
+    border-radius: 50%;
+    font-size: 2rem;
+    color:var(--black);
+    background: #fff;
+    margin-top: 1rem;
+    display: block;
+}
+.mpants .box-container .box .icons a:hover{
+    background: var(--main-color);
+    color:#fff;
+}
+
+
+.mpants .box-container .box .content h3 {
+    font-size: 2.5rem;
+    font-weight: normal;
+    color: #000000;
+    text-align: center; /* Center-align the text */
+}
+
+.mpants .box-container .box .content .price {
+    font-size: 2rem;
+    font-weight: bolder;
+    color: #811919;
+    text-align: center; /* Center-align the text */
+}
+.mpants .box-container .box .content .price span {
+    font-size: 1.5rem;
+    font-weight: normal;
+    color: rgba(77, 75, 75, 0.664);
+    text-decoration: line-through;
+    text-align: center; /* Center-align the text */
+}
+
+.mpants .box-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    gap:1.5rem;
+}
+
+.mpants .box-container .box{
+    position: relative;
+    text-align: right;
+    overflow: hidden;
+}
+
+.mpants .box-container .box {
+    position: relative; /* Set the container to relative position */
+}
+
+.mpants .box-container .box .image {
+    height: 60rem;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 30px;
+}
+
+.mpants .box-container .box .content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 2rem;
+    background: #ffffffe7;
+    border-bottom-left-radius: 30px; /* Match the border radius of the image */
+    border-bottom-right-radius: 30px; /* Match the border radius of the image */
+}
+
+
+.mpants .box-container .box .image img{
+    height:100%;
+    width:100%;
+    object-fit: cover;
+}
+.mpants .box-container .box:hover .image img{
+    transform: scale(1.2);
+}
+.mpants .box-container .box .icons{
+    position: absolute;
+    top: 0; right: -6rem;
+    z-index: 1;
+}
+.mpants .box-container .box:hover .icons{
+    right: 1rem;
+}
+
+.mpants .box-container .box .icons a{
+    height: 4.5rem;
+    width: 4.5rem;
+    line-height: 4.5rem;
+    border-radius: 50%;
+    font-size: 2rem;
+    color:var(--black);
+    background: #fff;
+    margin-top: 1rem;
+    display: block;
+}
+.mpants .box-container .box .icons a:hover{
+    background: var(--main-color);
+    color:#fff;
+}
+
+
+.mpants .box-container .box .content h3 {
+    font-size: 2.5rem;
+    font-weight: normal;
+    color: #000000;
+    text-align: center; /* Center-align the text */
+}
+
+.mpants .box-container .box .content .price {
+    font-size: 2rem;
+    font-weight: bolder;
+    color: #811919;
+    text-align: center; /* Center-align the text */
+}
+.mpants .box-container .box .content .price span {
+    font-size: 1.5rem;
+    font-weight: normal;
+    color: rgba(77, 75, 75, 0.664);
+    text-decoration: line-through;
+    text-align: center; /* Center-align the text */
+}
+
+/*MPANTS ENDS HERE*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* media queries  */
+
+@media (max-width:991px){
+
+    html{
+        font-size:55%;
+    }
+
+    .header{
+        padding:2rem;
+    }
+
+    .header.active{
+        padding:2rem;
+    }
+
+    section{
+        padding:2rem;
+    }
+
+}
+
+@media (max-width:768px){
+
+    #menu-btn{
+        display: inline-block;
+    }
+
+    .header .search-form{
+        width:90%;
+    }
+
+    .header .navbar{
+        position: absolute;
+        top:99%; left:0; right:0;
+        background:#222;
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    }
+
+    .header .navbar.active{
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    }
+
+    .header .navbar a{
+        display: block;
+        margin:2rem;
+        font-size: 2rem;
+    }
+
+}
+
+@media (max-width:450px){
+
+    html{
+        font-size:50%;
+    }
+
+    .home .home-slider .swiper-button-next,
+    .home .home-slider .swiper-button-prev{
+        display: none;
+    }
+
+}

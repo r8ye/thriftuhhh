@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Products</title>
+    <!-- Importing the Poppins font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&display=swap" rel="stylesheet">
+    <!-- Your custom CSS link -->
+    <link rel="stylesheet" href="cart.css">
+</head>
+<body class="">
+    
+    <div class="container">
+        <header>
+            <h1>Your Shopping Cart</h1>
+            <div class="shopping">
+                <img src="acas.jpg">
+                <span class="quantity">0</span>
+            </div>
+        </header>
+
+        <div class="list">
+          
+        </div>
+    </div>
+    <div class="card">
+        <h1>Cart</h1>
+        <ul class="listCard">
+        </ul>
+        <div class="checkOut">
+            <div class="total">0</div>
+            
+            <div class="closeShopping">Close</div>
+        </div>
+    </div>
+
+    <!-- Popup Structure -->
+    <div class="popup-container" style="display: none;">
+        <div class="popup">
+            <div class="popup-message">Order Successfully Placed!</div>
+            <button class="popup-no">x</button>
+        </div>
+    </div>
+
+    <script>
+
+let openShopping = document.querySelector('.shopping');
+let closeShopping = document.querySelector('.closeShopping');
+let list = document.querySelector('.list');
+let listCard = document.querySelector('.listCard');
+let body = document.querySelector('body');
+let total = document.querySelector('.total');
+let quantity = document.querySelector('.quantity');
+let buyNowPopup = document.querySelector('.popup-container');
+let buyNowYesBtn = document.querySelector('.popup-yes');
+let buyNowNoBtn = document.querySelector('.popup-no');
+let checkOutButton = document.querySelector('.checkOut');
+
+openShopping.addEventListener('click', (event) => {
+    event.stopPropagation(); // Stop event propagation to prevent the page from sliding
+    body.classList.add('active');
+});
+
+closeShopping.addEventListener('click', () => {
+    body.classList.remove('active');
+});
+
+// Define a function to show the popup
+function showPopup() {
+    buyNowPopup.style.display = 'block';
+}
+
+checkOutButton.addEventListener('click', showPopup);
+
+buyNowNoBtn.addEventListener('click', () => {
+    buyNowPopup.style.display = 'none';
+});
+
+// Remove the event listener for the checkout button from the close button click event
+closeShopping.addEventListener('click', () => {
+    checkOutButton.removeEventListener('click', showPopup);
+});
+
+// Rest of your code remains unchanged
+
+
+let products = [
+    {
+        id: 1,
+        name: 'Graphic Oversize Tee',
+        image: 'womenscat/tees1.jpg',
+        price: 399.99
+    },
+    {
+        id: 2,
+        name: 'Crew Neck Tee',
+        image: 'womenscat/tees2.jpg',
+        price: 369.99
+    },
+    {
+        id: 3,
+        name: 'Loose Fit Tee',
+        image: 'womenscat/tees3.jpg',
+        price: 359.99
+    },
+    {
+        id: 4,
+        name: 'Floral Lace Crop Top',
+        image: 'womenscat/croptop1.jpg',
+        price: 399.99
+    },
+    {
+        id: 5,
+        name: 'Corset Crop Top',
+        image: 'womenscat/croptop2.jpg',
+        price: 369.99
+    },
+    {
+        id: 6,
+        name: 'Ribbon Bliss Crop Top',
+        image: 'womenscat/croptop3.jpg',
+        price: 359.99
+    },
+    {
+        id: 7,
+        name: 'Sweetheart Lace Tank Top',
+        image: 'womenscat/tanktop1.jpg',
+        price: 399.99
+    },
+    {
+        id: 8,
+        name: 'Buttoned Crop Tank Top',
+        image: 'womenscat/tanktop2.jpg',
+        price: 399.99
+    },
+    {
+        id: 9,
+        name: 'Halter Neck Tank Top',
+        image: 'womenscat/tanktop3.jpg',
+        price: 399.99
+    },
+    {
+    id: 10,
+    name: 'Brown Pleated Mini Skirt',
+    image: 'womenscat/skirts1.jpg',
+    price: 399.99
+},
+{
+    id: 11,
+    name: 'Frill Frail Mini Skirt',
+    image: 'womenscat/skirts2.jpg',
+    price: 399.99
+},
+{
+    id: 12,
+    name: 'Strap Stud Lace Mini Skirt',
+    image: 'womenscat/skirts3.jpg',
+    price: 399.99
+},
+{
+    id: 13,
+    name: 'Layered Wide Leg Jeans',
+    image: 'womenscat/pants1.jpg',
+    price: 399.99
+},
+{
+    id: 14,
+    name: 'Loose Fit Cargo Jeans',
+    image: 'womenscat/pants2.jpg',
+    price: 399.99
+},
+{
+    id: 15,
+    name: 'Cargo Painted Jeans',
+    image: 'womenscat/pants3.jpg',
+    price: 399.99
+},
+{
+    id: 16,
+    name: 'Velvet Striped T-shirt',
+    image: 'menscat/tshirt1.jpg',
+    price: 399.99
+},
+{
+    id: 17,
+    name: 'Basic V-neck T-shirt',
+    image: 'menscat/tshirt2.jpg',
+    price: 399.99
+},
+{
+    id: 18,
+    name: 'Breezy Stripe T-shirt',
+    image: 'menscat/tshirt3.jpg',
+    price: 399.99
+},
+{
+    id: 19,
+    name: 'Classic Cable Knitted Vest',
+    image: 'menscat/vest1.jpg',
+    price: 399.99
+},
+{
+    id: 20,
+    name: 'Cozy V-neck Wool Vest',
+    image: 'menscat/vest2.jpg',
+    price: 399.99
+},
+{
+    id: 21,
+    name: 'Solid Knit Sweat Vest',
+    image: 'menscat/vest3.jpg',
+    price: 399.99
+},
+{
+    id: 22,
+    name: 'Loose Fit Cotton Graphic Tee',
+    image: 'menscat/graphic1.jpg',
+    price: 399.99
+},
+{
+    id: 23,
+    name: 'Oversized Graphic Tee',
+    image: 'menscat/graphic2.jpg',
+    price: 399.99
+},
+{
+    id: 24,
+    name: 'Metallic Graphic Tee',
+    image: 'menscat/graphic3.jpg',
+    price: 399.99
+},
+{
+    id: 25,
+    name: 'Destroyed Hem Shorts',
+    image: 'menscat/shorts1.jpg',
+    price: 399.99
+},
+{
+    id: 26,
+    name: 'Destroyed Washed Shorts',
+    image: 'menscat/shorts2.jpg',
+    price: 399.99
+},
+{
+    id: 27,
+    name: 'Banding Jagger Shorts',
+    image: 'menscat/shorts3.jpg',
+    price: 399.99
+},
+{
+    id: 28,
+    name: 'Wide Fit Cargo Pants',
+    image: 'menscat/mpants1.jpg',
+    price: 399.99
+},
+{
+    id: 29,
+    name: 'Wash Pintuck Pants',
+    image: 'menscat/mpants2.jpg',
+    price: 399.99
+},
+{
+    id: 30,
+    name: 'Wide Fit Cargo Pants',
+    image: 'menscat/mpants3.jpg',
+    price: 399.99
+},
+{
+    id: 31,
+    name: 'Unisex Brooklyn Sweatshirt',
+    image: 'na/na1.png',
+    price: 309.99
+},
+{
+    id: 32,
+    name: 'Blokette Graphic Sweatshirt',
+    image: 'na/na2.png',
+    price: 309.99
+},
+{
+    id: 33,
+    name: 'Blokecore Graphic Crop Tee',
+    image: 'na/na3.png',
+    price: 309.99
+},
+{
+    id: 34,
+    name: 'Pleated Mini Skirt',
+    image: 'na/na4.png',
+    price: 309.99
+},
+{
+    id: 35,
+    name: 'String Cargo Pants',
+    image: 'na/na5.png',
+    price: 309.99
+},
+{
+    id: 36,
+    name: 'Graphic Cotton Crop Tee',
+    image: 'na/na6.png',
+    price: 309.99
+},
+{
+    id: 37,
+    name: 'Frill Frail Mini Skirt',
+    image: 'na/na7.png',
+    price: 309.99
+},
+{
+    id: 38,
+    name: 'Unisex Brooklyn Sweatshirt',
+    image: 'na/na8.png',
+    price: 309.99
+},
+{
+    id: 39,
+    name: 'Destroyed Baggy Pants',
+    image: 'na/na9.png',
+    price: 309.99
+},
+{
+    id: 40,
+    name: 'Camo Cargo Pants',
+    image: 'na/na10.png',
+    price: 309.99
+},
+{
+    id: 41,
+    name: 'Drawstring Parachute Pants',
+    image: 'na/na11.png',
+    price: 309.99
+},
+{
+    id: 42,
+    name: 'Banding Cargo Pants',
+    image: 'na/na12.png',
+    price: 309.99
+}
+
+];
+
+let listCards = [];
+
+function initApp() {
+    products.forEach((value, key) => {
+        let newDiv = document.createElement('div');
+        newDiv.classList.add('item');
+        newDiv.innerHTML = `
+            <img src="${value.image}">
+            <div class="title">${value.name}</div>
+            <div class="price">${value.price.toLocaleString()}</div>
+            <button onclick="addToCart(${key}, event)">Add To Cart</button>`; // Pass event object
+        list.appendChild(newDiv);
+    });
+}
+
+initApp();
+
+function addToCart(key, event) {
+    event.preventDefault();
+    event.stopPropagation();
+
+    if (listCards[key] == null) {
+        listCards[key] = JSON.parse(JSON.stringify(products[key]));
+        listCards[key].quantity = 1;
+    } else {
+        listCards[key].quantity += 1;
+    }
+
+    listCards[key].price = listCards[key].quantity * products[key].price;
+
+    // Debugging statements
+    console.log("Added to cart - Quantity:", listCards[key].quantity);
+    console.log("Added to cart - Price per item:", products[key].price);
+    console.log("Added to cart - Total price:", listCards[key].price);
+
+    reloadCard();
+}
+
+function reloadCard() {
+    listCard.innerHTML = '';
+    let count = 0;
+    let totalPrice = 0;
+    listCards.forEach((value, key) => {
+        let itemTotal = parseFloat(value.price) * value.quantity; // Ensure price is a valid number
+        totalPrice += itemTotal;
+        count += value.quantity;
+        if (value != null) {
+            let newDiv = document.createElement('li');
+            newDiv.innerHTML = `
+                <div><img src="${value.image}"/></div>
+                <div class="productName">${value.name}</div>
+                <div>${itemTotal.toLocaleString()}</div>
+                <div>
+                    <button onclick="changeQuantity(${key}, ${value.quantity - 1})">-</button>
+                    <div class="count">${value.quantity}</div>
+                    <button onclick="changeQuantity(${key}, ${value.quantity + 1})">+</button>
+                </div>`;
+            listCard.appendChild(newDiv);
+
+            // Add margin between the image and product name
+            let image = newDiv.querySelector('img');
+            let productName = newDiv.querySelector('.productName');
+            image.style.marginRight = '10px'; // Adjust margin-right as needed
+            productName.style.marginLeft = '10px'; // Adjust margin-left as needed
+        }
+    });
+    total.innerText = totalPrice.toLocaleString();
+    quantity.innerText = count;
+}
+
+
+function changeQuantity(key, quantity) {
+    if (quantity <= 0) {
+        delete listCards[key];
+    } else {
+        listCards[key].quantity = quantity;
+        listCards[key].price = quantity * products[key].price;
+    }
+    console.log("Changed quantity:", listCards[key]);
+    reloadCard();
+}
+
+
+    </script>
+
+</body>
+</html>
